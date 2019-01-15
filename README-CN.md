@@ -597,7 +597,7 @@ Wechat.custom_message_send Wechat::Message.to(userid).msgtype(msgtype对应的�
 
 //例如发送textcard
 Wechat.custom_message_send Wechat::Message.to(userid).textcard(title,description,url,btntxt).agent_id(your agent_id)
-//更多msgtype，请访问企业微信文档https://work.weixin.qq.com/api/doc#90000/90135/90236
+//更多msgtype，请查看[企业微信文档](https://work.weixin.qq.com/api/doc#90000/90135/90236)
 ```
 
 
