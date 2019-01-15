@@ -590,15 +590,15 @@ Wechat.api.template_message_send Wechat::Message.to(openid).template(template['t
 template = YAML.load(File.read(template_yaml_path))
 wechat.template_message_send Wechat::Message.to(openid).template(template['template'])
 ```
-## 利用custom_message_send发送文本消息，文本卡片消息，图文消息(图片，视频，语音也支持，不过需要先利用Wechat.api(:corp).media_create上传素材，上传素材只支持本地文件)
+## 企业微信利用custom_message_send发送文本消息，文本卡片消息，图文消息(图片，视频，语音也支持，不过需要先利用Wechat.api(:corp).media_create上传素材，上传素材只支持本地文件)
 
 ```ruby
-Wechat.custom_message_send Wechat::Message.to(userid).msgtype(msgtype对应的内容).agent_id(your agent_id)
+Wechat.api(:corp).custom_message_send Wechat::Message.to(userid).msgtype(msgtype对应的内容).agent_id(your agent_id)
 
 //例如发送textcard
-Wechat.custom_message_send Wechat::Message.to(userid).textcard(title,description,url,btntxt).agent_id(your agent_id)
+Wechat.api(:corp).custom_message_send Wechat::Message.to(userid).textcard(title,description,url,btntxt).agent_id(your agent_id)
 ```
-//更多msgtype，请查看[企业微信文档](https://work.weixin.qq.com/api/doc#90000/90135/90236)
+更多msgtype，请查看[企业微信文档](https://work.weixin.qq.com/api/doc#90000/90135/90236)
 
 ## wechat_api - Rails Controller Wechat API
 
