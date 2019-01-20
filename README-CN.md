@@ -191,7 +191,6 @@ test:
  #  appid: "my_appid"
  #  secret: "my_secret"
 ```
-
 进一步的多账号支持参见[PR 150](https://github.com/Eric-Guo/wechat/pull/150)。
 
 #### 数据库微信账户配置
@@ -589,6 +588,13 @@ Wechat.api.template_message_send Wechat::Message.to(openid).template(template['t
 ```ruby
 template = YAML.load(File.read(template_yaml_path))
 wechat.template_message_send Wechat::Message.to(openid).template(template['template'])
+```
+## 企业微信也可以利用custom_message_send发送消息
+
+```ruby
+
+wechat.custom_message_send Wechat::Message.to(userid).msgtype(content).agent_id(agentid)
+
 ```
 
 ## wechat_api - Rails Controller Wechat API
